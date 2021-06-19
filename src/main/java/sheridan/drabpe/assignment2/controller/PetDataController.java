@@ -108,7 +108,7 @@ public class PetDataController {
             PetForm form = petDataService.getPetForm(Integer.parseInt(id));
             if (form != null) {
                 model.addAttribute("pet", form);
-                return "PetDetails"; // show the student data in the form to edit
+                return "PetDetails";
             } else {
                 logger.trace("no data for this id=" + id);
                 return "DataNotFound" + id;
@@ -179,7 +179,7 @@ public class PetDataController {
             logger.trace("the user inputs are correct");
             petDataService.updatePetForm(form);
             logger.debug("id = " + form.getId());
-            return "redirect:StudentDetails/" + form.getId();
+            return "redirect:PetDetails/" + form.getId();
         }
     }
 }

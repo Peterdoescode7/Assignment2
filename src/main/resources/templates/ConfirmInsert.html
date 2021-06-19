@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Confirm Insert</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{../css/main.css}" href="../static/css/main.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{../css/footer.css}" href="../static/css/footer.css" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script th:src="@{../js/footer.js}" src="../static/js/footer.js"></script>
 </head>
 <body>
-
+<main>
+    <h1>Confirm Insert</h1>
+    <h2>Entered Data:</h2>
+    <div th:object="${form}">
+        <p>
+            <label class="group_label">Pet Name:</label>
+            <span class="output" th:text="*{petName}">Bart</span>
+        </p>
+        <p>
+            <label class="group_label">Pet Kind:</label>
+            <span class="output" th:text="*{petKind}">Simpson</span>
+        </p>
+        <p>
+            <label class="group_label">Pet Gender:</label>
+            <span class="output" th:text="*{petGender}">Computer Programmer</span>
+        </p>
+        <p>
+            <label class="group_label">Vaccinated:</label>
+            <span class="output" th:text="*{vaccinated}">1</span>
+        </p>
+    </div>
+    <p><a href="Index.html" th:href="@{../Index}">Index</a></p>
+    <p><a href="AddPet.html" th:href="@{../AddPet}">Add Pet</a></p>
+    <p><a href="ListPets.html" th:href="@{../ListPets}">List Pets</a></p>
+</main>
 </body>
 </html>
